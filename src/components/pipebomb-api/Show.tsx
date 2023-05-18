@@ -1,59 +1,61 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from 'axios';
 
-const SeriesAPI = "https://anij.bytecats.codes/pipebomb/api/series/vip/";
-const proxy = "https://anij.bytecats.codes/proxy/?url=";
+interface SearchQuery {
+  q: string;
+}
 
-type ShowProps = {
-  seriesId: string | number | boolean;
-};
+interface AnimeIDQuery {
+  id: string;
+  tt: string;
+  e: string;
+}
 
-const Show: React.FC<ShowProps> = ({ seriesId }) => {
-  const [showInfo, setShowInfo] = useState<any>(null);
-  const [episodeInfo, setEpisodeInfo] = useState<any>(null);
+interface ShowIDQuery {
+  id: string;
+}
 
-  useEffect(() => {
-    const fetchShowInfo = async () => {
-      const data = await getShowInfo(seriesId);
-      setShowInfo(data);
-    };
+interface EpisodeIDQuery {
+  id: string;
+}
 
-    fetchShowInfo();
-  }, [seriesId]);
+interface ServerIDQuery {
+  id: string;
+}
 
-  useEffect(() => {
-    const fetchEpisodeInfo = async () => {
-      if (showInfo && showInfo.episode_id) {
-        const data = await getEpisodeInfo(showInfo.episode_id);
-        setEpisodeInfo(data);
-      }
-    };
+const API_BASE_URL = 'http://127.0.0.1:8001/api';
 
-    fetchEpisodeInfo();
-  }, [showInfo]);
-
-  // ... Render your component here based on the showInfo and episodeInfo state
-};
-
-async function searchShows(query: string | number | boolean) {
-  const response = await axios.get(
-    `${proxy}${SeriesAPI}search?q=${encodeURIComponent(query)}`
-  );
+// Search for anime by query
+export async function searchAnime(query: SearchQuery) {
+  const response = await axios.get(`${API_BASE_URL}/anime/all/search`, { params: query });
   return response.data;
 }
 
-async function getShowInfo(seriesId: string | number | boolean) {
-  const response = await axios.get(
-    `${proxy}${SeriesAPI}id?q=${encodeURIComponent(seriesId)}`
-  );
+// Fetch anime sources by show ID
+export async function fetchAnimeSources(query: AnimeIDQuery) {
+  const response = await axios.get(`${API_BASE_URL}/anime/all/sources`, { params: query });
   return response.data;
 }
 
-async function getEpisodeInfo(episodeId: string | number | boolean) {
-  const response = await axios.get(
-    `${proxy}${SeriesAPI}?q=${encodeURIComponent(episodeId)}`
-  );
+// Search for shows by query
+export async function searchShows(query: SearchQuery) {
+  const response = await axios.get(`${API_BASE_URL}/series/vip/search`, { params: query });
   return response.data;
 }
 
-export { searchShows, getShowInfo, getEpisodeInfo, Show };
+// Fetch show seasons and episodes by show ID
+export async function fetchShowSeasons(query: ShowIDQuery) {
+  const response = await axios.get(`${API_BASE_URL}/series/vip/seasons`, { params: query });
+  return response.data;
+}
+
+// Fetch show servers by episode ID
+export async function fetchShowServers(query: EpisodeIDQuery) {
+  const response = await axios.get(`${API_BASE_URL}/series/vip/servers`, { params: query });
+  return response.data;
+}
+
+// Fetch show sources by server ID
+export async function fetchShowSources(query: ServerIDQuery) {
+  const response = await axios.get(`${API_BASE_URL}/series/vip/sources`, { params: query });
+  return response.data;
+}
