@@ -1,0 +1,21 @@
+{
+  "SEARCH": {
+    "type": "info",
+    "data": {
+      "searchTerm": ""
+    }
+  },
+  "IMAGE": {
+    "type": "image",
+    "data": {
+      "mangaID": ""
+    }
+  },
+  "CHAPTERS": {
+    "type": "chapters",
+    "data": {
+      "mangaID": "",
+      "chapterID": ""
+    }
+  }
+}

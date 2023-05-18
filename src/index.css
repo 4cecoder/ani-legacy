@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* src/index.css */
+/* Player */
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.react-player__controls {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 3px;
+}
+
+.react-player__controls button {
+    color: #fff;
+}
+
+
+.player-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: #8b008b;*/
+    /*background-opacity: 0.1;*/
+    border-radius: 10px;
+    /*border: 12px solid #333;*/
+}
+.player-container:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 10px solid #6b7280;
+}
+
+.player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+
+    /* prevent the video from overflowing the container */
+    overflow: hidden;
+
+    /* prevent the video from being selectable */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+/* Background colors */
+.bg-theater {
+    /*background-color: #000;*/
+}
+
+/* Transitions */
+.video-player {
+    transition: all 0.3s ease;
+}
+
+/* Border radius */
+.rounded-player {
+    border-radius: 5px;
+}
+
+.rounded-player-theater {
+    border-radius: 0;
+}
+
+/* Box shadows */
+.shadow-player {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-player-theater {
+    box-shadow: none;
+}
+
+/* Seeker thumb */
+.seeker::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(128, 0, 128, 0.7);
+}
+
+.seeker::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(128, 0, 128, 0.7);
+}
+
+/* Spinner */
+.spinner {
+    border: 8px solid rgba(160, 160, 160, 0.2);
+    border-left-color: rgba(128, 0, 128, 1);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+    z-index: 10;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 120s ease infinite;
+}

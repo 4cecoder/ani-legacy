@@ -1,0 +1,12 @@
+{
+    email info@bytecats.codes
+    acme_ca https://acme-v02.api.letsencrypt.org/directory
+}
+
+anij.bytecats.codes {
+    reverse_proxy / localhost:3000
+    tls {
+        dns linode {env.LINODE_PAT}
+    }
+}
+

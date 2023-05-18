@@ -1,0 +1,86 @@
+.player-container {
+    background-color: #8b008b;
+    border-radius: 10px;
+    border: 12px solid #333;
+    overflow: hidden; /* prevent the video from overflowing the container */
+    position: relative;
+}
+
+.player-container:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 10px solid #6b7280;
+    z-index: -1;
+}
+
+.player-container .react-resizable-handle {
+    background-color: #444;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-container .react-resizable-handle::after {
+    content: "";
+    border: 2px solid #666;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.react-player__controls {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 3px;
+}
+
+.react-player__controls button {
+    color: #fff;
+}
+
+.react-player__preview {
+    background-color: #000;
+}
+
+.player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+
+    /* prevent the video from overflowing the container */
+    overflow: hidden;
+
+    /* prevent the video from being selectable */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+
+.react-player-wrapper iframe {
+    pointer-events: none; /* disable mouse events on the iframe */
+}
+
+.react-player-wrapper iframe:hover {
+    pointer-events: auto; /* enable mouse events when hovering over the iframe */
+}
+
+.react-player-wrapper iframe[allowfullscreen="true"] {
+    /* disable fullscreen controls */
+    pointer-events: none;
+}
+
+.react-player-wrapper iframe[allowfullscreen="true"]:hover {
+    /* re-enable mouse events when hovering over the iframe with fullscreen controls disabled */
+    pointer-events: none;
+}
+

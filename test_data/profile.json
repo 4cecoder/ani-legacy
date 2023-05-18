@@ -1,0 +1,39 @@
+{
+    "profile": {
+        "name": "Pickle Rick",
+        "image": "https://avatars.mds.yandex.net/i?id=98704405d2c8ee9a49973da1087f1e12-2375004-images-thumbs&ref=rim&n=33&w=267&h=150",
+        "bio": "Greetings, mortals! I am Pickle Rick, the eccentric and brilliant scientist who's not afraid to get his hands dirty (literally). I've transcended the mundane limitations of the human form and have ascended to new heights of intelligence and power.\n\nMy adventures have taken me to the depths of the sewer system, to the heights of interdimensional escapades, and everywhere in between. My unorthodox methods and unique perspective on life have garnered me a following of both admirers and detractors, but I couldn't care less about their opinions.\n\nI'm a man of science and I approach every problem with a level of sarcasm and wit that only I can muster. My enemies fear me, my allies respect me, and my daughter... well, she just tolerates me.\n\nSo if you ever find yourself in a pickle, just remember: the solution to every problem can be solved with enough science and enough firepower. That's the Pickle Rick way.",
+        "philosophy": "Never half-ass two things. Whole-ass one thing.",
+        "achievements": [
+            {
+                "title": "Master of Disguise",
+                "description": "Successfully turned into a pickle to avoid family therapy session."
+            },
+            {
+                "title": "Exterminator",
+                "description": "Defeated countless foes using wit, science, and firepower."
+            },
+            {
+                "title": "Pickle Perfectionist",
+                "description": "You've achieved ultimate pickle mastery as Pickle Rick! After undergoing a series of grueling experiments and battles, you've honed your skills and become a true pickle expert. Your pickling prowess is unmatched, and your pickles are the talk of the town. Congratulations on reaching pickle perfection!"
+            }
+        ],
+        "socialLinks": [
+            {
+                "name": "Twitter",
+                "icon": "FaTwitter",
+                "url": "#"
+            },
+            {
+                "name": "Github",
+                "icon": "FaGithub",
+                "url": "#"
+            },
+            {
+                "name": "Website",
+                "icon": "FaGlobe",
+                "url": "#"
+            }
+        ]
+    }
+}
