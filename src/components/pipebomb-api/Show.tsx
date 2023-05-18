@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const SeriesAPI = "https://anij.bytecats.codes/pipebomb/series/vip/";
+const SeriesAPI = "https://anij.bytecats.codes/pipebomb/api/series/vip/";
 const proxy = "https://anij.bytecats.codes/proxy/?url=";
 
 type ShowProps = {

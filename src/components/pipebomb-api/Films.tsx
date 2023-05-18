@@ -27,7 +27,7 @@ interface SourceResponse {
   sources: Source[];
 }
 
-const API_BASE_URL = "https://anij.bytecats.codes/pipebomb";
+const API_BASE_URL = "https://anij.bytecats.codes/pipebomb/api";
 const PROXY = "https://anij.bytecats.codes/proxy/?url=";
 
 // pipebomb-api/Films.tsx
